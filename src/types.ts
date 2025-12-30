@@ -274,3 +274,20 @@ export interface CommentConfig {
   system: 'gitalk' | 'artalk' | 'waline' | 'none'
   gitalk?: GitalkConfig
 }
+
+/**
+ * 图标配置接口 / Icon configuration interface
+ * @description 统一管理网站所有图标配置 / Unified management of all website icon configurations
+ * @property {string} logo - 网站Logo路径（用于Header左上角） / Website logo path (for Header top-left)
+ * @property {string} favicon - 浏览器标签页图标路径 / Browser tab icon path
+ * @property {string} appleTouchIcon - Apple设备图标路径 / Apple device icon path
+ * @property {string} favicon32 - 32x32像素图标路径 / 32x32 pixel icon path
+ * @property {string} favicon16 - 16x16像素图标路径 / 16x16 pixel icon path
+ */
+export interface IconConfig {
+  logo: string
+  favicon: string
+  appleTouchIcon: string
+  favicon32: string
+  favicon16: string
+}

@@ -1,6 +1,6 @@
 ---
 import { ClientRouter } from 'astro:transitions'
-import { ANALYTICS_CONFIG, SITE } from '~/config'
+import { ANALYTICS_CONFIG, ICON_CONFIG, SITE } from '~/config'
 
 type Props = {
   title: string
@@ -32,10 +32,10 @@ const ogImage = new URL(image || SITE.ogImage, Astro.url)
 <meta name="color-scheme" content="light dark" />
 
 <!-- icon -->
-<link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href={ICON_CONFIG.favicon} />
+<link rel="apple-touch-icon" sizes="180x180" href={ICON_CONFIG.appleTouchIcon} />
+<link rel="icon" type="image/png" sizes="32x32" href={ICON_CONFIG.favicon32} />
+<link rel="icon" type="image/png" sizes="16x16" href={ICON_CONFIG.favicon16} />
 
 {/* RSS Feed Link */}
 <link rel="alternate" type="application/rss+xml" title={SITE.title} href={new URL('/rss.xml', Astro.site).href} />

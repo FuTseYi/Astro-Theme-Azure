@@ -1,4 +1,4 @@
-import { SITE } from '~/config'
+import { SITE, ICON_CONFIG } from '~/config'
 import { getAllPosts } from '../lib/data'
 import type { CollectionEntry } from 'astro:content'
 import sanitizeHtml from 'sanitize-html'
@@ -223,6 +223,11 @@ export async function generateRSS20(): Promise<string> {
     <pubDate>${lastBuildDate}</pubDate>
     <lastBuildDate>${lastBuildDate}</lastBuildDate>
     <generator>Astro Azure Theme</generator>
+    <image>
+      <url>${siteUrl}${ICON_CONFIG.logo}</url>
+      <title>${escapeXml(title)}</title>
+      <link>${siteUrl}</link>
+    </image>
     <atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml" />
     ${processedPosts
       .map(
@@ -260,6 +265,7 @@ export async function generateAtom10(): Promise<string> {
   <updated>${lastBuildDate}</updated>
   <language>${lang}</language>
   <id>${siteUrl}/</id>
+  <logo>${siteUrl}${ICON_CONFIG.logo}</logo>
   <author>
     <name>${escapeXml(author)}</name>
     <uri>${siteUrl}</uri>

@@ -2,6 +2,7 @@ import type {
   AnalyticsConfig,
   CommentConfig,
   GithubConfig,
+  IconConfig,
   Link,
   PhotosConfig,
   PostConfig,
@@ -17,12 +18,24 @@ export const SITE: Site = {
   title: 'Azure',
   description:
     'Azure is a modern blogging theme built on Astro.js, designed for developers. It supports multiple post layouts, photo displays, project displays, and more, providing an elegant user experience and powerful customization capabilities.',
-  website: 'https://litos.vercel.app/',
+  website: 'https://azure-theme.vercel.app/',
   lang: 'en',
   base: '/',
   author: 'FuTseYi',
-  ogImage: '/og-image.webp',
-  transition: false,
+  ogImage: '/og-image.webp', // 网站社交分享图片 / Social share image
+  transition: true, // 是否启用页面切换过渡效果 / Whether to enable page transition effects
+}
+
+/**
+ * 图标配置 / Icon configuration
+ * @description 统一管理网站所有图标 / Unified management of all website icons
+ */
+export const ICON_CONFIG: IconConfig = {
+  logo: '/favicon.png', // 网站Logo（Header左上角）
+  favicon: '/favicon.png', // 浏览器标签页图标
+  appleTouchIcon: '/favicon.png', // Apple设备图标
+  favicon32: '/favicon.png', // 32x32像素图标
+  favicon16: '/favicon.png', // 16x16像素图标
 }
 
 export const HEADER_LINKS: Link[] = [
@@ -67,7 +80,7 @@ export const FOOTER_LINKS: Link[] = [
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     name: 'github',
-    url: 'https://github.com/yourname',
+    url: 'https://github.com/FuTseYi',
     icon: 'icon-[ri--github-fill]',
     count: 19,
   },
